@@ -27,8 +27,7 @@ developing applications that use %{name}.
 
 
 %build
-cp -r %{_builddir}/pangox-compat-0.0.2/libtinfo.so.6.1 /usr/local/lib
-ln -sf /usr/local/lib/libtinfo.so.6.1 /usr/local/lib/libtinfo.so.6
+cp -r %{_builddir}/pangox-compat-0.0.2/libtinfo.so.6 /usr/lib
 ldconfig
 %configure --disable-static
 make %{?_smp_mflags}
