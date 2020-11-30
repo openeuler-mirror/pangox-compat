@@ -24,9 +24,6 @@ developing applications that use %{name}.
 
 %prep
 %autosetup
-mkdir -p /usr/local/lib
-cp %{_builddir}/libtinfo.so.6 /usr/local/lib/
-export LD_LIBRARY_PATH=/usr/local/lib/libtinfo.so.6:$LD_LIBRARY_PATH
 
 
 %build
