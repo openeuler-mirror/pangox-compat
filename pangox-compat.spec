@@ -8,7 +8,7 @@ URL:            http://ftp.gnome.org/pub/GNOME/sources/pangox-compat/0.0/
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/pangox-compat/0.0/%{name}-%{version}.tar.xz
 
 BuildRequires:  pango-devel
-BuildRequires:  gcc
+BuildRequires:  gcc kmod ncurses-6.1 libmount
 
 %description
 This is a compatibility library providing the obsolete pangox library
