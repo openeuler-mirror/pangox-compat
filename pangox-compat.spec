@@ -1,6 +1,6 @@
 Name:           pangox-compat
 Version:        0.0.2
-Release:        15%{?dist}
+Release:        16
 Summary:        Compatibility library for pangox
 
 License:        LGPLv2+
@@ -50,6 +50,9 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %{_libdir}/pkgconfig/*
 
 %changelog
+* Fri Jun 10 2022 fuyahong <fuyahong@uniontech.com> - 0.0.2-16
+- delete %dist.
+
 * Fri Jul 26 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.0.2-15
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
