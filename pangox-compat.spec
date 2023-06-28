@@ -1,6 +1,6 @@
 Name:           pangox-compat
 Version:        0.0.2
-Release:        16
+Release:        17
 Summary:        Compatibility library for pangox
 
 License:        LGPLv2+
@@ -27,6 +27,10 @@ developing applications that use %{name}.
 
 
 %build
+%if "%toolchain" == "clang"
+	export CFLAGS="$CFLAGS -Wno-error=int-conversion"
+	export CXXFLAGS="$CXXFLAGS -Wno-error=int-conversion"
+%endif
 %configure --disable-static
 make %{?_smp_mflags}
 
@@ -50,6 +54,9 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %{_libdir}/pkgconfig/*
 
 %changelog
+* Tue Jun 20 2023 yoo <sunyuechi@iscas.ac.cn> - 0.0.2-17
+- fix clang build error
+
 * Mon Dec 13 2021 zhangshaoning <zhangshaoning@uniontech.com> - 0.0.2-16
 - delete %dist.
 
